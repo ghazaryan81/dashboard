@@ -1,5 +1,5 @@
 {
-	"name": "webpack-bundler",
+	"name": "dashboard",
 	"version": "0.0.1",
 	"description": "",
 	"main": "src/scripts/index.js",

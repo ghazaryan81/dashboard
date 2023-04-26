@@ -1,5 +1,13 @@
 import "../../styles";
 
+/*
+import { createStore, applyMiddleware } from "redux";
+import { Provider } from "react-redux";
+import thunk from "redux-thunk";
+import { composeWithDevTools } from "@redux-devtools/extension";
+import { createBrowserHistory } from "history";
+*/
+
 import React, { FC } from "react";
 import ReactDOM from "react-dom/client";
 import SVGSpriteSrc from "~icons/sprite.s.svg";
