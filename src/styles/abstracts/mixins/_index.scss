@@ -1,0 +1,290 @@
+@use "sass:map";
+@use "sass:math";
+@use "sass:list";
+@use "sass:string";
+@use "~styles/abstracts/functions" as main-functions;
+
+@mixin media($val, $breakpoint-direction-of-influence: max) {
+	@media screen and (#{$breakpoint-direction-of-influence}-width: $val) {
+		@content;
+	}
+}
+
+@mixin keyframes($name) {
+	@keyframes #{$name} {
+		@content;
+	}
+}
+
+@mixin wh($width, $height: $width) {
+	width: $width;
+	height: $height;
+}
+
+@mixin mx($left, $right: $left) {
+	margin: {
+		right: $right;
+		left: $left;
+	}
+}
+
+@mixin my($top, $bottom: $top) {
+	margin: {
+		top: $top;
+		bottom: $bottom;
+	}
+}
+
+@mixin px($left, $right: $left) {
+	padding: {
+		right: $right;
+		left: $left;
+	}
+}
+
+@mixin py($top, $bottom: $top) {
+	padding: {
+		top: $top;
+		bottom: $bottom;
+	}
+}
+
+@mixin relative {
+	position: relative;
+	top: 0;
+	left: 0;
+}
+
+@mixin absolute {
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+
+@mixin full-fill {
+	@include absolute;
+
+	right: 0;
+	bottom: 0;
+}
+
+@mixin cover($val: cover) {
+	@include wh(100%);
+
+	object-fit: $val;
+}
+
+@mixin kill-space {
+	margin: 0;
+	padding: 0;
+}
+
+@mixin truncat($line) {
+	display: -webkit-box !important;
+	overflow: hidden;
+	white-space: normal;
+	text-overflow: ellipsis;
+	-webkit-line-clamp: $line;
+	-webkit-box-orient: vertical;
+}
+
+@mixin ellipsis {
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+}
+
+@mixin l-center-y($type: absolute, $top: 50%) {
+	position: $type;
+	top: $top;
+	transform: translateY(-50%);
+}
+
+@mixin l-center-x($type: absolute, $left: 50%) {
+	position: $type;
+	left: $left;
+	transform: translateX(-50%);
+}
+
+@mixin l-center($type: absolute, $top: 50%, $left: 50%) {
+	position: $type;
+	top: $top;
+	left: $left;
+	transform: translate(-50%, -50%);
+}
+
+@mixin f-center-x($display: flex) {
+	display: $display;
+	justify-content: center;
+}
+
+@mixin f-center-y($display: flex) {
+	display: $display;
+	align-items: center;
+}
+
+@mixin f-center($display: flex) {
+	display: $display;
+	justify-content: center;
+	align-items: center;
+}
+
+@mixin arrow($direction: down, $size: 5px, $color: #555) {
+	width: 0;
+	height: 0;
+
+	@if $direction == left {
+		border-top: $size solid transparent;
+		border-bottom: $size solid transparent;
+		border-right: $size solid $color;
+	} @else if $direction == right {
+		border-top: $size solid transparent;
+		border-bottom: $size solid transparent;
+		border-left: $size solid $color;
+	} @else if $direction == down {
+		border-left: $size solid transparent;
+		border-right: $size solid transparent;
+		border-top: $size solid $color;
+	} @else {
+		border-left: $size solid transparent;
+		border-right: $size solid transparent;
+		border-bottom: $size solid $color;
+	}
+}
+
+@mixin placeholder {
+	&.placeholder {
+		@content;
+	}
+
+	&:placeholder {
+		@content;
+	}
+
+	&::placeholder {
+		@content;
+	}
+
+	&:input-placeholder {
+		@content;
+	}
+
+	&::input-placeholder {
+		@content;
+	}
+}
+
+@mixin flexbox(
+	$display: flex,
+	$direction: row,
+	$placeContent: null,
+	$placeItems: null,
+	$wrap: nowrap,
+	$shrink: 0,
+	$grow: 0,
+	$alignContent: null,
+	$justifyContent: null,
+	$alignItems: null,
+	$justifyItems: null
+) {
+	display: $display;
+	flex-flow: $direction $wrap;
+
+	@if $placeContent == null {
+		@if $alignContent {
+			align-content: $alignContent;
+		}
+
+		@if $justifyContent {
+			justify-content: $justifyContent;
+		}
+	} @else {
+		place-content: $placeContent;
+	}
+
+	@if $placeItems == null {
+		@if $alignItems {
+			align-items: $alignItems;
+		}
+
+		@if $justifyItems {
+			justify-items: $justifyItems;
+		}
+	} @else {
+		place-items: $placeItems;
+	}
+
+	flex-shrink: $shrink;
+	flex-grow: $grow;
+}
+
+@mixin kill-space {
+	margin: 0;
+	padding: 0;
+}
+
+@mixin fonts(
+	$filesDirPath,
+	$fontFamily,
+	$filesNames,
+	$fontDisplay: block,
+	$fontType: sans-serif
+) {
+	@each $fileName in map.keys($filesNames) {
+		$fontWeight: map.get($filesNames, $fileName, weight);
+		$fontStyle: map.get($filesNames, $fileName, style);
+		$fontsExts: map.get($filesNames, $fileName, exts);
+		$isWoff2: false;
+		$isWoff: false;
+
+		@each $fontExt in $fontsExts {
+			@if $fontExt == woff2 {
+				$isWoff2: true;
+			}
+		}
+
+		@each $fontExt in $fontsExts {
+			@if $fontExt == woff {
+				$isWoff: true;
+			}
+		}
+
+		@font-face {
+			font-family: string.quote($fontFamily);
+			font-weight: $fontWeight;
+			font-style: $fontStyle;
+			font-display: $fontDisplay;
+
+			@if $isWoff2 == true {
+				src: url($filesDirPath + $fileName + ".woff2") format("woff2");
+			}
+
+			@if $isWoff == true {
+				src: url($filesDirPath + $fileName + ".woff") format("woff");
+			}
+		}
+	}
+}
+
+@mixin p($position: rel, $top: 0, $left: 0) {
+	position: main-functions.position($position);
+	top: $top;
+	left: $left;
+}
+
+@mixin root($vars) {
+	@each $var-item, $val in $vars {
+		@if string.index($var-item, "to-rgb") != null {
+			--#{$var-item}: #{main-functions.to-rgb($val)};
+		} @else if
+			string.index($var-item, "rem") !=
+			null and
+			$var-item!=
+			"global--rem-size"
+		{
+			--#{$var-item}: #{main-functions.rem($val)};
+		} @else {
+			--#{$var-item}: #{$val};
+		}
+	}
+}

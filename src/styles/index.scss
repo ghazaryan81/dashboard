@@ -1,0 +1,52 @@
+@use "sass:map";
+@use "sass:math";
+@use "sass:string";
+@use "base" as *;
+@use "components/atoms/typography/" as *;
+@use "components/atoms/typography/vars" as *;
+
+:root {
+	--root-font-size: map.get($global, global--html-font-size);
+
+	@include root(
+		map-collect($colors, $global, $sys-colors, $token, $typography-size)
+	);
+
+	font-size: map.get($global, global--html-font-size);
+}
+
+@include typography;
+
+html,
+body {
+	width: 100%;
+}
+
+html {
+	display: flex;
+	min-height: 100%;
+	align-items: stretch;
+}
+
+body {
+	padding-top: 0;
+	font-family: Roboto, sans-serif;
+	font-weight: 300;
+	font-style: normal;
+}
+
+.svg-icon {
+	display: inline-block;
+	fill: currentcolor;
+	stroke: currentcolor;
+	stroke-width: 0;
+}
+
+.carcass {
+	margin: 0 auto;
+	max-width: 1600px;
+}
+
+.df {
+	display: flex;
+}

@@ -1,0 +1,35 @@
+{
+	"compilerOptions": {
+		"outDir": "./build-react-ts",
+		"plugins": [
+			{
+				"name": "typescript-plugin-css-modules",
+				"options": {
+					"customTemplate": "./customTemplate.js"
+				}
+			}
+		],
+		"resolveJsonModule": true,
+		"allowSyntheticDefaultImports": true,
+		"esModuleInterop": true,
+		"alwaysStrict": true,
+		"target": "es5",
+		"jsx": "react",
+		"noEmitOnError": true,
+		"noUnusedLocals": true,
+		"removeComments": true,
+		"noImplicitAny": true,
+		"baseUrl": "./",
+		"typeRoots": ["node_modules/@types", "./src/types/main.d.ts"],
+		"paths": {
+			"~pug": ["./src/pug"],
+			"~styles": ["./src/styles/"],
+			"~scripts": ["./src/scripts/"],
+			"~icons": ["./src/icons/"],
+			"~public": ["./public/"],
+			"~data": ["./data/"]
+		}
+	},
+	"exclude": ["node_modules"],
+	"include": ["./src/**/*", "./src/types/main.d.ts"]
+}

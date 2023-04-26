@@ -1,0 +1,13 @@
+@use "sass:map";
+@use "sass:meta";
+@use "sass:list";
+@use "~styles/abstracts/functions" as *;
+@use "~styles/abstracts/mixins" as *;
+@use "~styles/abstracts/variables/" as *;
+@use "vars" as *;
+
+@mixin typography() {
+	.typography {
+		text-decoration: none;
+	}
+}

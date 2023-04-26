@@ -1,0 +1,196 @@
+extends ~pug/layout
+include ~pug/components/index
+block meta
+ include ~pug/components/meta
+block styles
+ include ~pug/components/styles
+block content
+ -
+  const toRem = (px, rootPx = 10) => (px/rootPx).toFixed(3) + "rem";
+ +div(id="root")
+ +div.carcass
+  +btn.btn.btn--circled.btn--circled-size-md.btn--circled-bg.btn--circled-shadow
+   +svg-sprite("hamburger")(width=toRem(18) height=toRem(12))
+  +a.logo.typography--size-18(href="#") Constructor
+  +nav.nav
+   +a(class="[ nav__link ]")
+    | Dashboard  
+
+ //- +input.checkbox(type="checkbox")
+ //- +input.checkbox(type="checkbox" checked)
+ //- +input.checkbox(type="checkbox" disabled)
+ //- +input.checkbox(type="checkbox" checked disabled)
+ //- +span.typography--size-18 Constructor
+ //- +span.typography--size-16 Constructor
+ //- +span.typography--size-14 Constructor
+ //- +span.typography--size-13 Constructor
+ //- +span.typography--size-12 Constructor
+ //- +span.typography--size-10 Constructor
+
+ //- +img.thumb.thumb--circled.thumb--circled-size-md(src="assets/img/p1.jpg")
+ //- +img.thumb.thumb--circled.thumb--circled-size-sm(src="assets/img/p1.jpg")
+ //- +img.thumb.thumb--circled.thumb--circled-size-sm(src="assets/img/p2.jpg")
+ //- +img.thumb.thumb--circled.thumb--circled-size-sm(src="assets/img/p3.jpg")
+ //- +img.thumb.thumb--circled.thumb--circled-size-sm(src="assets/img/p4.jpg")
+ //- +img.thumb.thumb--circled.thumb--circled-size-sm(src="assets/img/p5.jpg")
+ //- +img.thumb.thumb--rounded.thumb--rounded-size-md(src="assets/img/i1.jpg")
+ //- +img.thumb.thumb--rounded.thumb--rounded-size-md(src="assets/img/i2.jpg")
+ //- +img.thumb.thumb--rounded.thumb--rounded-size-md(src="assets/img/i3.jpg")
+ //- +img.thumb.thumb--rounded.thumb--rounded-size-md(src="assets/img/i4.jpg")
+ //- +img.thumb.thumb--rounded.thumb--rounded-size-md(src="assets/img/i5.jpg")
+ //- +img.thumb.thumb--rounded.thumb--rounded-size-md(src="assets/img/i6.jpg")
+ //- +img.thumb.thumb--rounded.thumb--rounded-size-md(src="assets/img/i7.jpg")
+ //- +img.thumb.thumb--rounded.thumb--rounded-size-md(src="assets/img/i8.jpg")
+ //- +img.thumb.thumb--rounded.thumb--rounded-size-md(src="assets/img/i9.jpg")
+ //- +img.thumb.thumb--rounded.thumb--rounded-size-md(src="assets/img/i10.jpg")
+ //- +img.thumb.thumb--rounded.thumb--rounded-size-lg(src="assets/img/il1.jpg")
+
+
+ //- +btn.btn.btn--circled.btn--circled-size-sm.btn--circled-bg.btn--circled-border.btn--circled-shadow
+ //-  +svg-sprite("check")(width=toRem(18.67) height=toRem(18.67))
+
+ //- +btn.btn.btn--circled.btn--circled-size-sm.btn--circled-bg.btn--circled-border.btn--circled-shadow
+ //-  +svg-sprite("image")(width=toRem(16.8) height=toRem(16.8))
+
+ //- +btn.btn.btn--circled.btn--circled-size-sm.btn--circled-bg.btn--circled-border.btn--circled-shadow
+ //-  +svg-sprite("recycle-bin")(width=toRem(13.07) height=toRem(16.8))
+
+ //- +btn.btn.btn--circled.btn--circled-size-sm.btn--circled-bg.btn--circled-border.btn--circled-shadow
+ //-  +svg-sprite("table")(width=toRem(16.8) height=toRem(16.8))
+
+ //- +btn.btn.btn--circled.btn--circled-size-sm.btn--circled-bg.btn--circled-border.btn--circled-shadow
+ //-  +svg-sprite("typography")(width=toRem(17.73) height=toRem(14))
+
+ //- +btn.btn.btn--circled.btn--circled-size-md.btn--circled-bg.btn--circled-shadow
+ //-  +svg-sprite("hamburger")(width=toRem(18) height=toRem(12))
+
+ //- +btn.btn.btn--circled.btn--circled-size-md.btn--circled-bg.btn--circled-shadow
+ //-  +svg-sprite("add")(width=toRem(16) height=toRem(4))
+
+ //- +btn.btn.btn--circled.btn--circled-size-md.btn--circled-bg.btn--circled-shadow
+ //-  +svg-sprite("avatar")(width=toRem(17.05) height=toRem(20))
+
+ //- +btn.btn.btn--circled.btn--circled-size-md.btn--circled-bg.btn--circled-shadow
+ //-  +svg-sprite("avatar-isolate")(width=toRem(14.93) height=toRem(14.93))
+
+ //- +btn.btn.btn--circled.btn--circled-size-md.btn--circled-bg.btn--circled-shadow
+ //-  +svg-sprite("bell")(width=toRem(15.17) height=toRem(19.5))
+
+ //- +btn.btn.btn--circled.btn--circled-size-md.btn--circled-bg.btn--circled-shadow
+ //-  +svg-sprite("build")(width=toRem(20) height=toRem(20))
+
+ //- +btn.btn.btn--circled.btn--circled-size-md.btn--circled-bg.btn--circled-shadow
+ //-  +svg-sprite("calendar")(width=toRem(18) height=toRem(20))
+
+ //- +btn.btn.btn--circled.btn--circled-size-md.btn--circled-bg.btn--circled-shadow
+ //-  +svg-sprite("check2")(width=toRem(20) height=toRem(20))
+
+ //- +btn.btn.btn--circled.btn--circled-size-md.btn--circled-bg.btn--circled-shadow
+ //-  +svg-sprite("clients")(width=toRem(22) height=toRem(14))
+
+ //- +btn.btn.btn--circled.btn--circled-size-md.btn--circled-bg.btn--circled-shadow
+ //-  +svg-sprite("clouds")(width=toRem(24) height=toRem(16))
+
+ //- +btn.btn.btn--circled.btn--circled-size-md.btn--circled-bg.btn--circled-shadow
+ //-  +svg-sprite("compass")(width=toRem(20) height=toRem(20))
+
+ //- +btn.btn.btn--circled.btn--circled-size-md.btn--circled-bg.btn--circled-shadow
+ //-  +svg-sprite("dashboard")(width=toRem(18) height=toRem(18))
+
+ //- +btn.btn.btn--circled.btn--circled-size-md.btn--circled-bg.btn--circled-shadow
+ //-  +svg-sprite("diagram")(width=toRem(19.57) height=toRem(11.59))
+
+ //- +btn.btn.btn--circled.btn--circled-size-md.btn--circled-bg.btn--circled-shadow
+ //-  +svg-sprite("ellipses")(width=toRem(16) height=toRem(4))
+
+ //- +btn.btn.btn--circled.btn--circled-size-md.btn--circled-bg.btn--circled-shadow
+ //-  +svg-sprite("file")(width=toRem(16) height=toRem(20))
+
+ //- +btn.btn.btn--circled.btn--circled-size-md.btn--circled-bg.btn--circled-shadow
+ //-  +svg-sprite("folder")(width=toRem(20) height=toRem(16))
+
+ //- +btn.btn.btn--circled.btn--circled-size-md.btn--circled-bg.btn--circled-shadow
+ //-  +svg-sprite("grid")(width=toRem(18.67) height=toRem(18.67))
+
+ //- +btn.btn.btn--circled.btn--circled-size-md.btn--circled-bg.btn--circled-shadow
+ //-  +svg-sprite("hamburger")(width=toRem(18) height=toRem(12))
+
+ //- +btn.btn.btn--circled.btn--circled-size-md.btn--circled-bg.btn--circled-shadow
+ //-  +svg-sprite("list")(width=toRem(17.27) height=toRem(14))
+
+ //- +btn.btn.btn--circled.btn--circled-size-md.btn--circled-bg.btn--circled-shadow
+ //-  +svg-sprite("mail")(width=toRem(20) height=toRem(16))
+
+ //- +btn.btn.btn--circled.btn--circled-size-md.btn--circled-bg.btn--circled-shadow
+ //-  +svg-sprite("mark")(width=toRem(18.78) height=toRem(14))
+
+ //- +btn.btn.btn--circled.btn--circled-size-md.btn--circled-bg.btn--circled-shadow
+ //-  +svg-sprite("next")(width=toRem(6.58) height=toRem(11.18))
+
+ //- +btn.btn.btn--circled.btn--circled-size-md.btn--circled-bg.btn--circled-shadow
+ //-  +svg-sprite("notes")(width=toRem(20) height=toRem(16))
+
+ //- +btn.btn.btn--circled.btn--circled-size-md.btn--circled-bg.btn--circled-shadow
+ //-  +svg-sprite("phone")(width=toRem(17.96) height=toRem(17.96))
+
+ //- +btn.btn.btn--circled.btn--circled-size-md.btn--circled-bg.btn--circled-shadow
+ //-  +svg-sprite("reader")(width=toRem(22) height=toRem(17))
+
+ //- +btn.btn.btn--circled.btn--circled-size-md.btn--circled-bg.btn--circled-shadow
+ //-  +svg-sprite("search")(width=toRem(17.05) height=toRem(17.05))
+
+ //- +btn.btn.btn--circled.btn--circled-size-md.btn--circled-bg.btn--circled-shadow
+ //-  +svg-sprite("settings")(width=toRem(21.23) height=toRem(21.23))
+
+ //- +btn.btn.btn--circled.btn--circled-size-md.btn--circled-bg.btn--circled-shadow
+ //-  +svg-sprite("star")(width=toRem(17.11) height=toRem(16.36))
+
+ //- +btn.btn.btn--circled.btn--circled-size-md.btn--circled-bg.btn--circled-shadow
+ //-  +svg-sprite("tasks")(width=toRem(20.59) height=toRem(13.59))
+
+ //- +btn.btn.btn--circled.btn--circled-size-md.btn--circled-bg.btn--circled-shadow
+ //-  +svg-sprite("telegram")(width=toRem(16.31) height=toRem(13.68))
+
+ //- +btn.btn.btn--circled.btn--circled-size-md.btn--circled-bg.btn--circled-shadow
+ //-  +svg-sprite("thunder")(width=toRem(20) height=toRem(20.12))
+
+ //- +btn.btn.btn--circled.btn--circled-size-md.btn--circled-bg.btn--circled-shadow
+ //-  +svg-sprite("undo")(width=toRem(16.8) height=toRem(14))
+
+ //- +btn.btn.btn--circled.btn--circled-size-md.btn--circled-bg.btn--circled-shadow
+ //-  +svg-sprite("whatsapp")(width=toRem(20) height=toRem(19.99))
+
+ //- +btn.btn.btn--circled.btn--circled-size-md.btn--circled-bg.btn--circled-shadow
+ //-  +svg-sprite("world")(width=toRem(20) height=toRem(20))
+
+ //- +btn.btn.btn--circled.btn--circled-size-md.btn--circled-bg.btn--circled-shadow
+ //-  +svg-sprite("x")(width=toRem(20) height=toRem(20))
+
+ //- +svg-sprite("bullet").bullet.bullet--sys-color-aqua-to-rgb(width=toRem(18.78) height=toRem(14))
+ //- +svg-sprite("bullet").bullet.bullet--sys-color-orange-to-rgb(width=toRem(18.78) height=toRem(14))
+ //- +svg-sprite("bullet").bullet.bullet--sys-color-green-to-rgb(width=toRem(18.78) height=toRem(14))
+ //- +svg-sprite("bullet").bullet.bullet--sys-color-violet-to-rgb(width=toRem(18.78) height=toRem(14))
+
+ //- +div.badge.badge--size-md.badge--sys-color-aqua-to-rgb
+ //- +div.badge.badge--size-lg.badge--sys-color-orange-to-rgb
+
+ //- +div.typography.typography--bold.typography--size-18.typography--color-4-to-rgb
+ //-  | Constructor
+ //- +div.typography.typography--bold.typography--size-16.typography--color-4-to-rgb
+ //-  | Constructor
+ //- +div.typography.typography--bold.typography--size-14.typography--color-4-to-rgb
+ //-  | Constructor
+ //- +div.typography.typography--bold.typography--size-13.typography--color-4-to-rgb
+ //-  | Constructor
+ //- +div.typography.typography--bold.typography--size-13.typography--color-4-to-rgb
+ //-  | Constructor
+ //- +div.typography.typography--bold.typography--size-13.typography--color-4-to-rgb
+ //-  | Constructor
+
+ //- +btn.btn.btn--default.btn--default-size-lg.btn--rounded
+ //-  +svg-sprite("file")(width=toRem(20) height=toRem(20)).file
+ //-  +span.typography.typography--black.typography--size-12
+ //-   | New Note
+
+block scripts
+ include ~pug/components/scripts

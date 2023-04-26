@@ -1,0 +1,128 @@
+mixin tag(tagName)
+ #{tagName}&attributes(attributes)
+  block
+
+mixin div()
+ +tag('div')&attributes(attributes)
+  block
+
+mixin span()
+ +tag('span')&attributes(attributes)
+  block
+
+mixin a()
+ +tag('a')&attributes(attributes)
+  block
+
+mixin input()
+ +tag('input')&attributes(attributes)
+  block
+
+mixin textarea()
+ +tag('textarea')&attributes(attributes)
+  block
+
+mixin label()
+ +tag('label')&attributes(attributes)
+  block
+
+mixin section()
+ +tag('section')&attributes(attributes)
+  block
+
+mixin nav()
+ +tag('nav')&attributes(attributes)
+  block
+
+mixin ul()
+ +tag('ul')&attributes(attributes)
+  block
+
+mixin li()
+ +tag('li')&attributes(attributes)
+  block
+
+mixin form()
+ +tag('form')&attributes(attributes)
+  block
+
+mixin checkbox()
+ +tag('input')(type="checkbox")&attributes(attributes)
+  block
+
+mixin radio()
+ +tag('input')(type="radio")&attributes(attributes)
+  block
+
+mixin table()
+ +tag('table')&attributes(attributes)
+  block
+
+mixin caption()
+ +tag('caption')&attributes(attributes)
+  block
+
+mixin tr()
+ +tag('tr')&attributes(attributes)
+  block
+
+mixin th()
+ +tag('th')&attributes(attributes)
+  block
+
+mixin td()
+ +tag('td')&attributes(attributes)
+  block
+
+mixin tbody()
+ +tag('tbody')&attributes(attributes)
+  block
+
+mixin thead()
+ +tag('thead')&attributes(attributes)
+  block
+
+mixin img()
+ +tag('img')&attributes(attributes)
+  block
+
+mixin footer()
+ +tag('footer')&attributes(attributes)
+  block
+
+mixin header()
+ +tag('header')&attributes(attributes)
+  block
+
+mixin btn()
+ +tag('button')&attributes(attributes)
+  block
+
+mixin h1()
+ +tag('h1')&attributes(attributes)
+  block
+
+mixin h2()
+ +tag('h2')&attributes(attributes)
+  block
+
+mixin h3()
+ +tag('h3')&attributes(attributes)
+  block
+
+mixin h4()
+ +tag('h4')&attributes(attributes)
+  block
+
+mixin h5()
+ +tag('h5')&attributes(attributes)
+  block
+
+mixin h6()
+ +tag('h6')&attributes(attributes)
+  block
+
+mixin svg-sprite(name, baseDir = 'assets/icons/sprite.s.svg#')
+ //- svg(version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="svg-icon")&attributes(attributes)
+ svg(class="svg-icon")&attributes(attributes)
+  use(xlink:href=`${baseDir}${name}`)

@@ -1,0 +1,142 @@
+export const dir = {
+	packages: "node_modules",
+	packagesRegexp: /node_modules/,
+	toRoot: "..",
+
+	in: {
+		src: "src",
+		styles: "styles",
+		scripts: "scripts",
+		scriptsHTML: "html",
+		scriptsPug: "pug",
+		scriptsReact: "react",
+		scriptsReactTs: "react-ts",
+		htmlPage: "html",
+		pug: "pug",
+		pugPage: "pages",
+		reactPage: "react",
+		reactTsPage: "react-ts",
+		assets: "assets",
+		public: "public",
+		data: "data",
+		components: "components",
+		img: "img",
+		sounds: "sounds",
+		videos: "videos",
+		fonts: "fonts",
+		icons: "icons",
+		svg: "svg",
+	},
+
+	out: {
+		buildHTML: "build-html",
+		buildPug: "build-pug",
+		buildReact: "build-react",
+		buildReactTs: "build-react-ts",
+		assets: "assets",
+		fonts: "fonts",
+		icons: "icons",
+		html: "html",
+		css: "css",
+		js: "js",
+		img: "img",
+		fav: "fav",
+		styles: "styles",
+		scripts: "scripts",
+		img: "img",
+		sounds: "sounds",
+		videos: "videos",
+	},
+};
+
+export const ext = {
+	pug: "pug",
+	js: "js",
+	jsx: "jsx",
+	ts: "ts",
+	tsx: "tsx",
+	json: "json",
+	scss: "scss",
+	sass: "sass",
+	css: "css",
+	less: "less",
+	styl: "styl",
+	html: "html",
+	htm: "htm",
+};
+
+export const loaders = {
+	sass: "sass-loader",
+	postcss: "postcss-loader",
+	pug: "PugPlugin.loader",
+	pug2: "pug-bem-plain-loader",
+	file: "file-loader",
+	style: "style-loader",
+	css: "css-loader",
+	svgr: "@svgr/webpack",
+	svg2: "svg-url-loader",
+	babel: "babel-loader",
+	ts: "ts-loader",
+	babelPresetEnv: "@babel/preset-env",
+	babelPresetTypescript: "@babel/preset-typescript",
+	html: "html-loader",
+	tsCss: "css-modules-typescript-loader",
+};
+
+export const presets = {
+	babel: "@babel/preset-react",
+};
+
+export const extRegObj = {
+	svg: /\.i.svg$/i,
+	svg_s: /\.s.svg$/i,
+	svg_c: /\.c.svg$/i,
+	scripts: /\.m?[tj]sx?$/i,
+	styles: /\.s?[ac]ss$/i,
+	pug: /\.pug$/i,
+	jade: /\.jade$/i,
+	js: /\.jsx?$/i,
+	ts: /\.tsx?$/i,
+	json: /\.json$/i,
+	mp3: /\.mp3$/i,
+	html: /\.htm[l]$/i,
+	cssModules: /\.module\.(scss|sass|css)$/,
+};
+
+export const tests = {
+	svg: extRegObj.svg,
+	svg_s: extRegObj.svg_s,
+	svg_c: extRegObj.svg_c,
+	svgEmit: [extRegObj.scripts, extRegObj.styles, extRegObj.pug],
+	scripts: [extRegObj.scripts],
+	styles: extRegObj.styles,
+	mediaImages: /\.(a?png|jpe?g|tiff?|bmp|webp|avif|gif|ico)$/i,
+	mediaFonts: /\.(.f.svg|woff[2]?|[ot]tf|eot)$/i,
+	mediaVideos: /\.(mp4|webm|avi)$/i,
+	mediaSounds: extRegObj.mp3,
+	pug: [extRegObj.pug, extRegObj.jade],
+	js: [extRegObj.js, extRegObj.json],
+	ts: extRegObj.ts,
+	html: extRegObj.html,
+	cssModules: extRegObj.cssModules,
+};
+
+// //github.com/swc-project/bindings/blob/main/packages/html/index.ts#L5
+// //github.com/ashutoshSce/minify-html-webpack-plugin
+// !!//github.com/terser/html-minifier-terser#options-quick-reference
+export const minimizeOption = {
+	collapseWhitespace: true,
+	collapseInlineTagWhitespace: true,
+	conservativeCollapse: true,
+	keepClosingSlash: true,
+	removeComments: true,
+	removeRedundantAttributes: true,
+	removeScriptTypeAttributes: true,
+	removeStyleLinkTypeAttributes: true,
+	useShortDoctype: true,
+	removeAttributeQuotes: true,
+	minifyJS: true,
+	minifyCSS: true,
+	removeComments: true,
+	conservativeCollapse: false,
+};
