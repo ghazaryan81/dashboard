@@ -5,7 +5,11 @@
 
 # Auto-generated elements
 /dist
-# /build
+/build
+/build-html
+/build-pug
+/build-react
+/build-react-ts
 /zip
 
 # Bower package dependencies directory
