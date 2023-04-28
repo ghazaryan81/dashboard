@@ -8,6 +8,45 @@ import { composeWithDevTools } from "@redux-devtools/extension";
 import { createBrowserHistory } from "history";
 */
 
+/*
+import { createStore } from 'redux';
+
+function playlist(state = []) {
+  return state;
+}
+
+const store = createStore(playlist);
+
+store.subscribe(() => {
+  console.log(store.getState());
+})
+
+store.dispatch({ type: 'ADD_TRACK', payload: 'Smells like spirit' });
+
+
+reducer
+action
+store
+getState
+subscribe
+dispatch
+
+
+import {createStore} from "redux";
+
+function anyReducer(state=[], action) {
+ if (action.type === "Add") {
+  return [...state, action.payload]
+ }
+ return state
+}
+
+
+list
+
+
+*/
+
 import React, { FC } from "react";
 import ReactDOM from "react-dom/client";
 import SVGSpriteSrc from "~icons/sprite.s.svg";
