@@ -1,4 +1,4 @@
-import "../../styles";
+import "~styles";
 
 /*
 import { createStore, applyMiddleware } from "redux";

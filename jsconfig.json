@@ -1,0 +1,10 @@
+{
+	"compilerOptions": {
+		"baseUrl": ".",
+		"paths": {
+			"~styles": ["./src/styles"],
+			"~icons": ["./src/icons"]
+		},
+		"exclude": ["node_modules", "**/node_modules", "dist"]
+	}
+}
