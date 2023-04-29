@@ -1,4 +1,4 @@
-import "~styles";
+import "../../styles/react-ts";
 
 /*
 import { createStore, applyMiddleware } from "redux";

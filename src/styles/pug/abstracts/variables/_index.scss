@@ -1,0 +1,72 @@
+$color-blue: #5149e4;
+$color-black: #0a0603;
+$color-white: #fff;
+$color-pink: #ffb9cd;
+$color-gray: #8a96b1;
+$color-gray-2: #eceff7;
+$color-gray-3: #f9faff;
+$color-cyan: #b9eeff;
+$color-yellow: #f4e131;
+$color-red: #ff5b5b;
+$color-green: #00a389;
+$color-white-25: #fff;
+$color-blue-10: #4f45b6;
+$color-red-10: #f84040;
+$color-dark-1: #09090b;
+$color-dark-2: #111317;
+$color-dark-3: #1a1e23;
+
+$color-linear-1: linear-gradient(to bottom, #5149e4 0%, #5149e4 100%);
+$color-linear-2: linear-gradient(to bottom, #ffb9cd 0%, #ffb9cd 100%);
+
+$all-colors: ();
+
+$colors: (
+	violet--sugar-grape--to-rgb: #83f,
+	violet--ashton-skies--to-rgb: #7d8fb3,
+	violet--pearl--to-rgb: #f7f8fa,
+	violet--bijou-blue--to-rgb: #4d5e80,
+	violet--icy-brook--to-rgb: #c3cad9,
+	violet--heritage--to-rgb: #adb8cc,
+	violet--quantum-blue--to-rgb: #6b7a99,
+	violet--paper-white--to-rgb: #edeff2,
+	violet--grams-hair--to-rgb: #f5f6f7,
+	violet--anti-flash-white--to-rgb: #f2f3f5,
+	violet--blue-lobelia--to-rgb: #26334d,
+	white--real--to-rgb: #fff,
+	orange--halt-and-catch-fire--to-rgb: #f63,
+	aqua--shovel-knight--to-rgb: #33bfff,
+	green--bitter-lime-and-defeat--to-rgb: #29cc39,
+);
+
+$global: (
+	global--html-font-size: 62.5%,
+	global--rem-size: 10px,
+	global--selection-text-color-to-rgb: #fff,
+	global--selection-bg-color-to-rgb: #fff,
+	global--min-width: 250px,
+);
+
+$sys-colors: (
+	sys-color-aqua-to-rgb: #33bfff,
+	sys-color-orange-to-rgb: #f63,
+	sys-color-green-to-rgb: #29cc39,
+	sys-color-violet-to-rgb: #83f,
+	sys-color-blue-to-rgb: #3361ff,
+	sys-color-red-to-rgb: #e62e7b,
+);
+
+$token: (
+	token--border-radius-30: 30px,
+	token--border-radius-5: 5px,
+	token--border-width-2: 2px,
+	token--box-shadow: 2px,
+);
+
+$typography-color: (
+	color-1-to-rgb: #4d5e80,
+	color-2-to-rgb: #7d8fb3,
+	color-3-to-rgb: #adb8cc,
+	color-4-to-rgb: #6b7a99,
+	color-5-to-rgb: #c3cad9,
+);

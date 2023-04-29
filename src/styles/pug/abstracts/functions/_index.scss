@@ -1,0 +1,92 @@
+@use "sass:map";
+@use "sass:math";
+@use "sass:string";
+@use "~styles/pug/abstracts/variables/" as main-variables;
+
+@function rem(
+	$px,
+	$root-px: map.get(main-variables.$global, global--rem-size)
+) {
+	@return math.div($px, $root-px) * 1rem;
+}
+
+@function vw($px, $breakpoint-val: $breakpoint-val) {
+	@return math.div(($px * 100vw), $breakpoint-val);
+}
+
+@function if($condition, $true-val, $false-val) {
+	@if $condition == true {
+		@return $true-val;
+	} @else {
+		@return $false-val;
+	}
+}
+
+@function z-index($name, $z-indexes) {
+	@if index($z-indexes, $name) {
+		@return (length($z-indexes) - index($z-indexes, $name))+1;
+	} @else {
+		@warn 'There is no item "#{$name}" in this list; choose one of: #{$z-indexes}';
+
+		@return null;
+	}
+}
+
+@function position($position: rel) {
+	@if $position == rel {
+		@return relative;
+	} @else if $position == abs {
+		@return absolute;
+	} @else if $position == fix {
+		@return fixed;
+	}
+}
+
+@function map-collect($maps...) {
+	$collection: ();
+
+	@each $map in $maps {
+		$collection: map-merge($collection, $map);
+	}
+
+	@return $collection;
+}
+
+@function to-rgb($color) {
+	@return red($color) + ", " + green($color) + ", " + blue($color);
+}
+
+@function get($map-var, $map-key) {
+	@if map.has-key($map-var, $map-key) == true {
+		@return var(--#{$map-key});
+	} @else {
+		@debug "#{$map-key} there is no such key in the #{$map-var}";
+	}
+}
+
+@function str-replace($string, $search, $replace: "") {
+	$index: str-index($string, $search);
+
+	@if $index {
+		@return str-slice($string, 1, $index - 1) + $replace +
+			str-replace(
+				str-slice($string, $index + str-length($search)),
+				$search,
+				$replace
+			);
+	}
+
+	@return $string;
+}
+
+@function svg-to-data-uri($svg, $fill: null) {
+	$svg: if($fill, str-replace($svg, "<svg", "<svg fill='#{$fill}'"), $svg);
+	$svg: str-replace($svg, "<svg", "<svg xmlns='http://www.w3.org/2000/svg' ");
+	$svg: str-replace($svg, "<", "%3C");
+	$svg: str-replace($svg, ">", "%3E");
+	$svg: str-replace($svg, '"', "'");
+	$svg: str-replace($svg, "#", "%23");
+	$svg: str-replace($svg, "&", "%26");
+
+	@return url("data:image/svg+xml,#{$svg}");
+}

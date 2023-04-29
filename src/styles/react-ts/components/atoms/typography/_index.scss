@@ -1,0 +1,10 @@
+@use "sass:map";
+@use "sass:meta";
+@use "sass:list";
+@use "vars" as *;
+
+@mixin typography() {
+	.typography {
+		text-decoration: none;
+	}
+}

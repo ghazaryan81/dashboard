@@ -310,7 +310,12 @@ function webpackConfig() {
 									{ loader: MiniCssExtractPlugin.loader },
 									{ loader: loaders.css },
 									{ loader: loaders.postcss },
-									{ loader: loaders.sass },
+									{
+										loader: loaders.sass,
+										options: {
+											additionalData: `@use './src/styles/${bundleBy}/abstracts/index' as *;`,
+										},
+									},
 								],
 						  }
 						: bundleBy === "pug"
@@ -319,7 +324,12 @@ function webpackConfig() {
 								use: [
 									{ loader: loaders.css },
 									{ loader: loaders.postcss },
-									{ loader: loaders.sass },
+									{
+										loader: loaders.sass,
+										options: {
+											additionalData: `@use './src/styles/${bundleBy}/abstracts/index' as *;`,
+										},
+									},
 								],
 						  }
 						: {})(),
@@ -337,7 +347,7 @@ function webpackConfig() {
 									{
 										loader: loaders.sass,
 										options: {
-											additionalData: "@use './src/styles/abstracts/index' as *;",
+											additionalData: `@use './src/styles/${bundleBy}/abstracts/index' as *;`,
 										},
 									},
 								],
@@ -364,7 +374,7 @@ function webpackConfig() {
 									{
 										loader: loaders.sass,
 										options: {
-											additionalData: "@use './src/styles/abstracts/index' as *;",
+											additionalData: `@use './src/styles/${bundleBy}/abstracts/index' as *;`,
 										},
 									},
 								],

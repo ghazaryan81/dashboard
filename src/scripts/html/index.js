@@ -1,2 +1,2 @@
-import "../../styles/index.scss";
+import "../../styles/html/index.scss";
 console.log("html index");

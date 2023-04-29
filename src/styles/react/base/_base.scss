@@ -1,0 +1,75 @@
+@use "~styles/react/abstracts/mixins" as *;
+
+*,
+*::before,
+*::after {
+	box-sizing: inherit;
+}
+
+html {
+	overflow-x: hidden;
+	box-sizing: border-box;
+	scroll-behavior: smooth;
+}
+
+body {
+	-webkit-font-smoothing: antialiased;
+	text-decoration-skip: objects;
+	text-rendering: optimizelegibility;
+	text-size-adjust: 100%;
+	-webkit-tap-highlight-color: transparent;
+}
+
+p {
+	margin: 0;
+}
+
+a,
+button {
+	outline: none;
+	cursor: pointer;
+}
+
+a {
+	text-decoration: none;
+	color: currentcolor;
+}
+
+figure,
+picture {
+	margin: 0;
+	display: inline-block;
+	line-height: 0;
+
+	img {
+		width: 100%;
+	}
+}
+
+img {
+	vertical-align: top;
+	user-select: none;
+}
+
+img[draggable="false"] {
+	pointer-events: none;
+}
+
+fieldset {
+	@include kill-space;
+
+	border: 0;
+}
+
+ul,
+li {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+video {
+	outline: none;
+
+	@include wh(100%);
+}
