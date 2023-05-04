@@ -5,6 +5,10 @@
 @use "components/atoms/typography/" as *;
 @use "components/atoms/typography/vars" as *;
 
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 :root {
 	--root-font-size: map.get($global, global--html-font-size);
 

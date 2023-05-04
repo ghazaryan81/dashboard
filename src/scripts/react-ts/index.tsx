@@ -82,7 +82,7 @@ class App extends Component {
 		console.log("componentDidMount");
 	}
 	render(): ReactNode {
-		return <>APP</>;
+		return <div className="text-3xl font-bold underline">APP</div>;
 	}
 }
 
