@@ -1,11 +1,13 @@
 import "../../styles/react-ts";
 
-/*
 import { createStore, applyMiddleware } from "redux";
 import { Provider } from "react-redux";
 import thunk from "redux-thunk";
-import { composeWithDevTools } from "@redux-devtools/extension";
 import { createBrowserHistory } from "history";
+import { composeWithDevTools } from "@redux-devtools/extension";
+
+/*
+
 */
 
 /*
@@ -47,7 +49,7 @@ list
 
 */
 
-import React, { FC } from "react";
+import React, { FC, Component, ReactNode } from "react";
 import ReactDOM from "react-dom/client";
 import SVGSpriteSrc from "~icons/sprite.s.svg";
 
@@ -69,11 +71,22 @@ const SVGSprite: FC<SVGSpriteProps> = ({ name, width, height }) => (
 	</svg>
 );
 
+// input component
+
+const Input = function () {
+	return <input />;
+};
+
+class App extends Component {
+	componentDidMount(): void {
+		console.log("componentDidMount");
+	}
+	render(): ReactNode {
+		return <>APP</>;
+	}
+}
+
 const renderDOM = document.getElementById("root");
 const renderRoot = ReactDOM.createRoot(renderDOM);
 
-renderRoot.render(
-	<>
-		<div>HELLO</div>
-	</>
-);
+renderRoot.render(<App />);
